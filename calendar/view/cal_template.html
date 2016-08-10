@@ -1,0 +1,23 @@
+<table class="marL calendar" style="float:none;margin-bottom:25px;">
+    <tbody>
+    <tr>
+        <th>{{viewWeek[0]|date:'yyyy-MM-dd'}}</th>
+        <th>{{viewWeek[1]|date:'yyyy-MM-dd'}}</th>
+        <th>{{viewWeek[2]|date:'yyyy-MM-dd'}}</th>
+        <th>{{viewWeek[3]|date:'yyyy-MM-dd'}}</th>
+        <th>{{viewWeek[4]|date:'yyyy-MM-dd'}}</th>
+        <th>{{viewWeek[5]|date:'yyyy-MM-dd'}}</th>
+        <th>{{viewWeek[6]|date:'yyyy-MM-dd'}}</th>
+    </tr>
+    <tr ng-repeat="trItem in [0,1,2,3]">
+        <td  ng-click="changeCheck($event)" ng-class="{bg:changeDayClass(trItem*7+tdItem)}" ng-repeat="tdItem in [0,1,2,3,4,5,6]" data.date.index="{{trItem*7+tdItem}}">{{viewDate[trItem*7+tdItem]|date:'d'}}</td>
+    </tr>
+    <tr>
+        <td  ng-click="changeCheck($event)" ng-class="{bg:changeDayClass(tdItem)}" ng-repeat="tdItem in [28,29,30]" data.date.index="{{tdItem}}">{{viewDate[tdItem]|date:'d'}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
